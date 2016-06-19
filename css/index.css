@@ -1,0 +1,55 @@
+.bg-banner{
+    max-width: 100%;
+    height: 209px;
+    display: block;
+    background-image: url(/img/m_banner_3.jpg);
+}
+
+.bg-content{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3e2c7+0,b68d4c+100 */
+background: rgb(243,226,199); /* Old browsers */
+background: -moz-linear-gradient(45deg,  rgba(243,226,199,1) 0%, rgba(182,141,76,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  rgba(243,226,199,1) 0%,rgba(182,141,76,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  rgba(243,226,199,1) 0%,rgba(182,141,76,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#b68d4c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+.dg-menu{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eacf00+38,089004+100 */
+background: rgb(234,207,0); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(234,207,0,1) 38%, rgba(8,144,4,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(234,207,0,1) 38%,rgba(8,144,4,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(234,207,0,1) 38%,rgba(8,144,4,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eacf00', endColorstr='#089004',GradientType=1 ); /* IE6-9 */
+
+
+}
+.bg-gerente{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e8ef26+0,34ed17+100 */
+background: rgb(232,239,38); /* Old browsers */
+background: -moz-linear-gradient(45deg,  rgba(232,239,38,1) 0%, rgba(52,237,23,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  rgba(232,239,38,1) 0%,rgba(52,237,23,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  rgba(232,239,38,1) 0%,rgba(52,237,23,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8ef26', endColorstr='#34ed17',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.bg-footer{
+	background-color: #EFEAE3;
+}
+
+.borde{
+  border: 1px #eeeeee solid;
+  padding: .5rem;
+
+}
+.t-shadow{
+	text-shadow: 1px 1px #000;
+}
+
+.margin-top5{
+margin-top: 5px;
+}
+
+.margin-left240{
+	margin-left: 240px;
+}
