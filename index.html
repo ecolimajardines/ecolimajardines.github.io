@@ -78,7 +78,7 @@
                                             <div class="cell borde align-center">
                                                 <img src="fotos/productos/grass_americano.jpg">
                                                 <span>Grass Americano en Champa</span>
-                                            </div>                                            
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -214,7 +214,7 @@
                                             <div class="cell borde align-center">
                                                 <img src="fotos/obras/jcp_6.jpg">
                                                 <span>Mantenimiento de Areas Verdes</span>
-                                            </div>                                            
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -264,7 +264,7 @@
                                             <div class="cell borde align-center">
                                                 <img src="fotos/productos/vivero_3.jpg">
                                                 <span>Plantas forestales</span>
-                                            </div> 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -305,7 +305,7 @@
                                     <img src="fotos/obras/cahuide_2.jpg">
                                     <span>Parque Cahuide</span>
                                 </div>
-                            </div>                                                              
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -317,45 +317,108 @@
                     <h5>Whatsapp: 933 919 021</h5>
                     <hr class="bg-lightPink">
                         <div class="example" data-text="escribenos">
-                            <div class="grid">
+
+													<form id="jquery_form">
+														<div class="grid">
                                 <div class="row cells3">
                                     <div class="cell">
                                         <label>Nombre y Apellido</label>
                                         <div class="input-control text full-size">
-                                            <input type="text">
+																					  <input type="text" name="subject">
                                         </div>
                                     </div>
                                     <div class="cell">
                                         <label>Correo Electronico</label>
                                         <div class="input-control text full-size">
-                                            <input type="text">
+                                            <input type="text" name="reply_to">
                                         </div>
                                     </div>
                                     <div class="cell">
                                         <label>Telefono</label>
                                         <div class="input-control text full-size">
-                                            <input type="tel">
+                                            <input type="tel" name="extra_phone_number">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row cells1">
                                     <div class="cell">
                                             <div class="input-control textarea" data-role="input">
-                                            <textarea rows="4" cols="50" placeholder="Escribe tu comentario o pedido aqui..."></textarea>
+                                            <textarea name="text" rows="4" cols="50" placeholder="Escribe tu comentario o pedido aqui..."></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row cells1">
                                     <div class="cell">
-                                        <button class="button success">Enviar Datos</button>
+                                        <input class="button success" type="submit" name="send" value="Enviar Datos">
                                     </div>
                                 </div>
                             </div>
+													</form>
+
+
                         </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+	  <script>
+
+	      //update this with your $form selector
+	      var form_id = "jquery_form";
+
+	      var data = {
+	          "access_token": "amj4o3s1d2vueppilslahl5v"
+	      };
+
+	      function onSuccess() {
+	          // remove this to avoid redirect
+	          window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
+	      }
+
+	      function onError(error) {
+	          // remove this to avoid redirect
+	          window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+	      }
+
+	      var sendButton = $("#" + form_id + " [name='send']");
+
+	      function send() {
+	          sendButton.val('Sending…');
+	          sendButton.prop('disabled',true);
+
+	          var subject = $("#" + form_id + " [name='subject']").val();
+						var email = $("#" + form_id + " [name='reply_to']").val();
+			      var phone = 	$("#" + form_id + " [name='extra_phone_number']").val();
+	          var message = $("#" + form_id + " [name='text']").val();
+
+	          data['subject'] = 'VENTAS: '+subject;
+	          data['text'] ='Datos Personales: ' + '\n' +
+													'Nombre: '+ subject + '\n' +
+													'Telefono: ' + phone + '\n' +
+													'Email: ' + email + '\n' +
+													'Mensaje: ' + message;
+
+	          $.post('https://postmail.invotes.com/send',
+	              data,
+	              onSuccess
+	          ).fail(onError);
+
+	          return false;
+	      }
+
+	      sendButton.on('click', send);
+
+	      var $form = $("#" + form_id);
+	      $form.submit(function( event ) {
+	          event.preventDefault();
+	      });
+	  </script>
+
+
+
+
 </body>
 <footer style="background-color: #EFEAE3" class="margin-top5">
     <div class="container">
